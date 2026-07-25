@@ -1,6 +1,5 @@
 // ==========================================
 // Pal Store JavaScript Logic (Interactive)
-// الطالب: رامز حمودة أبو مصطفى - 1301210135
 // ==========================================
 
 // مصفوفة لحفظ عناصر السلة
@@ -50,19 +49,35 @@ function clearCart() {
 }
 
 // 5. البحث الحي السريع (Live Search) عن الهواتف بالاسم
+// function searchPhones() {
+//     let input = document.getElementById('searchInput').value.toLowerCase();
+//     let cards = document.getElementsByClassName('phone-card');
+
+//     for (let i = 0; i < cards.length; i++) {
+//         let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+//         if (title.includes(input)) {
+//             cards[i].style.display = "";
+//         } else {
+//             cards[i].style.display = "none";
+//         }
+//     }
+// }
+
+// دالة البحث المباشر في الجوالات
 function searchPhones() {
     let input = document.getElementById('searchInput').value.toLowerCase();
-    let cards = document.getElementsByClassName('phone-card');
+    let cards = document.querySelectorAll('.phone-card');
 
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+    cards.forEach(card => {
+        let title = card.querySelector('h3').innerText.toLowerCase();
         if (title.includes(input)) {
-            cards[i].style.display = "";
+            card.style.display = "block";
         } else {
-            cards[i].style.display = "none";
+            card.style.display = "none";
         }
-    }
+    });
 }
+
 
 // 6. فلترة الهواتف حسب العلامة التجارية (Brand Filter)
 function filterBrand(brandName) {
