@@ -1,0 +1,348 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0077cc;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  margin: 0px;
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 2.5vw;
+  min-font-size: 18px;
+  flex: 1;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+nav a {
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  margin: 5px 8px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+/* تنسيق زر السلة في الهيدر */
+.cart-btn {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin: 5px 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cart-btn:hover {
+  background-color: #d35400;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 30px;
+    display: flex;
+  }
+
+  nav a, .cart-btn {
+    font-size: 14px;
+    display: block;
+    margin: 8px auto;
+  }
+}
+
+.content {
+  padding: 150px 30px 40px;
+}
+
+/* تنسيقات شريط البحث وأزرار الفلترة */
+.controls-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#searchInput {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 50%;
+  max-width: 400px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#searchInput:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.4);
+}
+
+.filter-buttons {
+  margin-top: 15px;
+}
+
+.filter-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 18px;
+  margin: 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: #0077cc;
+  color: white;
+}
+
+.brand-section {
+  margin-bottom: 60px;
+}
+
+.brand-section h2 {
+  font-size: 24px;
+  color: #0077cc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.phone-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.phone-card {
+  width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.phone-card:hover {
+  transform: scale(1.05);
+}
+
+.phone-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.phone-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.phone-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* زر إضافة للسلة داخل الكروت */
+.add-cart-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #6a0dad;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.add-cart-btn:hover {
+  background-color: #52098b;
+  transform: scale(1.03);
+}
+
+.email {
+  display: flex;
+  width: 100%;
+  background-color: crimson;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  padding: 30px 0;
+  color: white;
+}
+
+.emailm {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 250px;
+  outline: none;
+}
+
+.emailm:focus {
+  border-color: #888;
+  box-shadow: 0 0 5px rgba(136, 136, 136, 0.3);
+}
+
+.btn {
+  padding: 12px 24px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #6a0dad;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #52098b;
+}
+
+.email h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #0077cc;
+}
+
+.highlight {
+  color: #0077cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.payment-img {
+  max-width: 50%;
+  margin-top: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.social-icons a img {
+  width: 24px;
+  margin: 0 10px 0 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.footer-column ul li a:visited,
+.footer-bottom a:visited {
+  color: crimson;
+}

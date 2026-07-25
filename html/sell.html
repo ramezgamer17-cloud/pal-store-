@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيع جوالك | Pal Store</title>
+    <link rel="stylesheet" href="../css/finalstyle.css">
+</head>
+<body style="padding:20px; font-family:sans-serif;">
+
+    <header>
+        <h1>Pal Store - نموذج بيع مستعمل</h1>
+        <a href="../final.html" style="color:white; font-weight:bold;">الرجوع للرئيسية</a>
+    </header>
+
+    <div style="max-width:500px; margin:30px auto; background:#f9f9f9; padding:20px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+        <h2>اعرض جوالك للبيع لدينا</h2>
+        <form id="sellForm" onsubmit="handleSellSubmit(event)">
+            <label>اسم الجوال:</label><br>
+            <input type="text" id="phoneModel" required style="width:100%; padding:8px; margin:8px 0;"><br>
+
+            <label>الماركة:</label><br>
+            <select id="phoneBrand" style="width:100%; padding:8px; margin:8px 0;">
+                <option value="Samsung">Samsung</option>
+                <option value="Apple">Apple</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Xiaomi">Xiaomi</option>
+            </select><br>
+
+            <label>السعر المطلوب ($):</label><br>
+            <input type="number" id="phonePrice" required style="width:100%; padding:8px; margin:8px 0;"><br>
+
+            <label>حالة الجهاز:</label><br>
+            <textarea id="phoneCond" placeholder="ممتاز، فيه خدوش بسيطة..." style="width:100%; padding:8px; margin:8px 0;"></textarea><br>
+
+            <button type="submit" style="background:#27ae60; color:#fff; border:none; padding:10px 20px; cursor:pointer; font-weight:bold;">إرسال الطلب</button>
+        </form>
+    </div>
+
+    <script>
+        function handleSellSubmit(e) {
+            e.preventDefault();
+            const model = document.getElementById('phoneModel').value;
+            alert(`شكراً لك! تم استلام طلب بيع جهازك (${model}). سنقوم بالتواصل معك قريباً.`);
+            document.getElementById('sellForm').reset();
+        }
+    </script>
+</body>
+</html>

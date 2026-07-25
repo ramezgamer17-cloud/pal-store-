@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/finalstyle.css">
+    <title>pal store phone shop - رامز حمودة أبو مصطفى 1301210135</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="header-content"> 
+      <img class="logo" src="img/logo3.png" alt="Pal Store Logo">
+      <h2>Welcome to Pal Store | عمل الطالب رامزأبو مصطفى و الطالب عبدالله النجار</h2>
+    </nav>
+    <nav class="main-nav">   
+      <a href="#">الرئيسية</a>
+      <a href="#payment">طرق الدفع</a>
+      <a href="#subscribe">الاشتراك</a>
+      <a href="html/sell.html">بيع جوالك</a>
+      <a href="html/faq.html">الأسئلة الشائعة</a>
+      
+      <!-- أيقونة السلة التفاعلية -->
+      <div class="cart-btn" onclick="toggleCartModal()">
+        🛒 السلة (<span id="cart-count">0</span>)
+      </div>
+    </nav>
+  </header>
+
+  <!-- شريط البحث والتصفية بـ JS -->
+  <section class="controls-section">
+    <input type="text" id="searchInput" onkeyup="searchPhones()" placeholder="ابحث عن جوال باسمه...">
+    
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterBrand('all')">الكل</button>
+      <button class="filter-btn" onclick="filterBrand('samsung')">Samsung</button>
+      <button class="filter-btn" onclick="filterBrand('apple')">Apple</button>
+      <button class="filter-btn" onclick="filterBrand('huawei')">Huawei</button>
+      <button class="filter-btn" onclick="filterBrand('xiaomi')">Xiaomi</button>
+      <button class="filter-btn" onclick="filterBrand('honor')">Honor</button>
+      <button class="filter-btn" onclick="filterBrand('redmagic')">RedMagic</button>
+    </div>
+  </section>
+    
+  <main class="content">
+
+  <!-- قسم Samsung (5 جوالات) -->
+  <section class="brand-section" data-brand="samsung">
+    <h2>جوالات Samsung</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="img/s24.jpg" alt="Samsung S24 Ultra">
+        <h3>Samsung Galaxy S24 Ultra</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 200MP<br><b>price</b>: <span class="price-val">1350</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Samsung Galaxy S24 Ultra', 1350)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/zfold.jpg" alt="Samsung fold 6">
+        <h3>Samsung Galaxy Z Fold 6</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">1799</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Samsung Galaxy Z Fold 6', 1799)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/zflip6.png" alt="Samsung Z Flip 6">
+        <h3>Samsung Galaxy Z Flip 6</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">1099</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Samsung Galaxy Z Flip 6', 1099)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/s23fe.jpg.jfif" alt="Samsung S23 FE">
+        <h3>Samsung Galaxy S23 FE</h3>
+        <p><b>RAM</b>: 8GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">620</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Samsung Galaxy S23 FE', 620)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/a55.jfif" alt="Samsung A55">
+        <h3>Samsung Galaxy A55 5G</h3>
+        <p><b>RAM</b>: 8GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">450</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Samsung Galaxy A55 5G', 450)">إضافة للسلة 🛒</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم Apple (5 جوالات) -->
+  <section class="brand-section" data-brand="apple">
+    <h2>جوالات Apple</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="img/iphone15pro.jpg" alt="iPhone 15 Pro Max">
+        <h3>iPhone 15 Pro Max</h3>
+        <p><b>RAM</b>: 8GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 48MP<br><b>price</b>: <span class="price-val">1199</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('iPhone 15 Pro Max', 1199)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/16.jfif" alt="iPhone 16">
+        <h3>iPhone 15</h3>
+        <p><b>RAM</b>: 6GB<br><b>Storage</b>: 128GB<br><b>Camera</b>: 48MP<br><b>price</b>: <span class="price-val">799</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('iPhone 16', 799)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/14pro.jfif" alt="iPhone 14 Pro">
+        <h3>iPhone 14 Pro</h3>
+        <p><b>RAM</b>: 6GB<br><b>Storage</b>: 128GB<br><b>Camera</b>: 48MP<br><b>price</b>: <span class="price-val">899</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('iPhone 14 Pro', 899)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/17 pro.avif" alt="iPhone 17 pro">
+        <h3>iPhone 14</h3>
+        <p><b>RAM</b>: 6GB<br><b>Storage</b>: 128GB<br><b>Camera</b>: 12MP<br><b>price</b>: <span class="price-val">699</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('iPhone 17 pro', 699)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/iPhone12.jpg" alt="iPhone 13">
+        <h3>iPhone 13</h3>
+        <p><b>RAM</b>: 4GB<br><b>Storage</b>: 128GB<br><b>Camera</b>: 12MP<br><b>price</b>: <span class="price-val">599</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('iPhone 13', 599)">إضافة للسلة 🛒</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم Huawei (5 جوالات) -->
+  <section class="brand-section" data-brand="huawei">
+    <h2>جوالات Huawei</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="img/tophwawi.jpg" alt="Huawei Pura 70 Ultra">
+        <h3>Huawei Pura 70 Ultra</h3>
+        <p><b>RAM</b>: 16GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">1299</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Huawei Pura 70 Ultra', 1299)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/hm60pro.jfif" alt="Huawei Mate 60 Pro">
+        <h3>Huawei Mate 60 Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">1050</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Huawei Mate 60 Pro', 1050)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/Nova.png" alt="Huawei Nova 12 Pro">
+        <h3>Huawei Nova 12 Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">550</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Huawei Nova 12 Pro', 550)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/hwawi1.jpg" alt="Huawei Nova 11">
+        <h3>Huawei Nova 11</h3>
+        <p><b>RAM</b>: 8GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">420</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Huawei Nova 11', 420)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/h60pro.jfif" alt="Huawei P60 Pro">
+        <h3>Huawei P60 Pro</h3>
+        <p><b>RAM</b>: 8GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 48MP<br><b>price</b>: <span class="price-val">850</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Huawei P60 Pro', 850)">إضافة للسلة 🛒</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم Xiaomi (5 جوالات) -->
+  <section class="brand-section" data-brand="xiaomi">
+    <h2>جوالات Xiaomi</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="img/x14u.jfif" alt="Xiaomi 14 Ultra">
+        <h3>Xiaomi 14 Ultra</h3>
+        <p><b>RAM</b>: 16GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">1199</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Xiaomi 14 Ultra', 1199)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/xiaomi13.png" alt="Xiaomi 13T Pro">
+        <h3>Xiaomi 13T Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">650</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Xiaomi 13T Pro', 650)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/x13pro+.jfif" alt="Redmi Note 13 Pro+">
+        <h3>Redmi Note 13 Pro+</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 200MP<br><b>price</b>: <span class="price-val">400</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Redmi Note 13 Pro+', 400)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/xiaomi12.jpg" alt="Xiaomi 12T">
+        <h3>Xiaomi 12T</h3>
+        <p><b>RAM</b>: 8GB<br><b>Storage</b>: 128GB<br><b>Camera</b>: 108MP<br><b>price</b>: <span class="price-val">380</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Xiaomi 12T', 380)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/12.jpg" alt="Redmi Note 12">
+        <h3>Redmi Note 12</h3>
+        <p><b>RAM</b>: 6GB<br><b>Storage</b>: 128GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">220</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Redmi Note 12', 220)">إضافة للسلة 🛒</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم Honor (جديد - 5 جوالات) -->
+  <section class="brand-section" data-brand="honor">
+    <h2>جوالات Honor</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="img/hm6pro.jfif" alt="Honor Magic 6 Pro">
+        <h3>Honor Magic 6 Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 180MP<br><b>price</b>: <span class="price-val">1099</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Honor Magic 6 Pro', 1099)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/h90.jfif" alt="Honor 90">
+        <h3>Honor 90</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 200MP<br><b>price</b>: <span class="price-val">450</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Honor 90', 450)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/hmv2.jfif" alt="Honor Magic V2">
+        <h3>Honor Magic V2</h3>
+        <p><b>RAM</b>: 16GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">1499</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Honor Magic V2', 1499)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/h9xb.jfif" alt="Honor X9b">
+        <h3>Honor X9b 5G</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 108MP<br><b>price</b>: <span class="price-val">320</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Honor X9b 5G', 320)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/h200.jfif" alt="Honor 200 Pro">
+        <h3>Honor 200 Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">680</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('Honor 200 Pro', 680)">إضافة للسلة 🛒</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم RedMagic (جديد - 5 جوالات) -->
+  <section class="brand-section" data-brand="redmagic">
+    <h2>جوالات RedMagic (Gaming)</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="img/rm9pro.jfif" alt="RedMagic 9 Pro">
+        <h3>RedMagic 9 Pro</h3>
+        <p><b>RAM</b>: 16GB<br><b>Storage</b>: 512GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">899</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('RedMagic 9 Pro', 899)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/rm8s.jfif" alt="RedMagic 8S Pro">
+        <h3>RedMagic 8S Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">720</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('RedMagic 8S Pro', 720)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/rm11pro.jfif" alt="RedMagic 11 Pro">
+        <h3>RedMagic 11 Pro</h3>
+        <p><b>RAM</b>: 12GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">950</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('RedMagic 11 Pro', 950)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/rm7pro.jfif" alt="RedMagic 7 Pro">
+        <h3>RedMagic 7 Pro</h3>
+        <p><b>RAM</b>: 16GB<br><b>Storage</b>: 256GB<br><b>Camera</b>: 64MP<br><b>price</b>: <span class="price-val">580</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('RedMagic 7 Pro', 580)">إضافة للسلة 🛒</button>
+      </div>
+      <div class="phone-card">
+        <img src="img/red_magic_10_pro_plus.png" alt="RedMagic 10 Pro+">
+        <h3>RedMagic 10 Pro+</h3>
+        <p><b>RAM</b>: 24GB<br><b>Storage</b>: 1TB<br><b>Camera</b>: 50MP<br><b>price</b>: <span class="price-val">850</span>$</p>
+        <button class="add-cart-btn" onclick="addToCart('RedMagic 10 Pro+', 850)">إضافة للسلة 🛒</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- نافذة السلة (Modal) -->
+  <div id="cartModal" class="cart-modal" style="display:none; position:fixed; top:20%; right:10%; background:#fff; padding:20px; border:2px solid #333; z-index:1000; width:300px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <h3>سلة المشتريات</h3>
+    <ul id="cart-items" style="list-style:none; padding:0;"></ul>
+    <p><b>الإجمالي: </b><span id="cart-total">0</span>$</p>
+    <button onclick="clearCart()" style="background:red; color:#fff; border:none; padding:5px 10px; cursor:pointer;">تفريغ السلة</button>
+    <button onclick="toggleCartModal()" style="background:#555; color:#fff; border:none; padding:5px 10px; cursor:pointer;">إغلاق</button>
+  </div>
+
+  <div class="email" id="subscribe">
+      <h1>Subscribe for more latest updates</h1>
+      <div class="txt">
+         <form onsubmit="handleSubscribe(event)">
+            <input type="email" id="subEmail" class="emailm" placeholder="Enter your email for daily offers" required>
+            <input type="submit" class="btn" value="Subscribe Now">
+         </form>
+      </div>
+  </div>
+
+  <footer class="footer" id="payment">
+    <div class="footer-cont">
+      <div class="footer-column">
+        <h3>Payment Options</h3>
+        <img src="img/payment.jpg" alt="Payment Methods" class="payment-img">
+      </div>
+
+      <div class="footer-column">
+        <h3>ABOUT US</h3>
+        <ul>
+          <li><a href="#">Pal Store</a></li>
+          <li><a href="tel:+970597784541">Contact</a></li>
+          <li><a href="html/career.html">Career</a></li>
+          <li><a href="html/terms.html">Terms & Conditions</a></li>
+          <li><a href="html/privacy.html">Privacy Policy</a></li>
+          <li><a href="html/sell.html">Sell on Palstore</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>ASSISTANCE</h3>
+        <ul>
+          <li><a href="html/how_to.html" class="v">How To Buy</a></li>
+          <li><a href="html/faq.html" class="v">FAQ</a></li>
+          <li><a href="html/warranty.html" class="v">Warranty</a></li>
+          <li><a href="html/cancel.html" class="v">Cancelations & Returnings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>CONTACT</h3>
+        <p>Call Center<br><a class="highlight" href="tel:+970597784541">0597784541</a></p>
+        <p>Email<br><a class="highlight" href="mailto:info@palstore.eu">info@palstore.eu</a></p>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="img/youtupe.png" alt="YouTube" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2024–2026 palstore.eu  رامز أبو مصطفى 1301210135 عبدالله النجار 1320224558 rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ربط كود الـ JavaScript التفاعلي -->
+  <script src="js/final.js"></script>
+</body>
+</html>

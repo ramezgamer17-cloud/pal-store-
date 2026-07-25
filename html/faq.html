@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/finalstyle.css">
+    <title>الأسئلة الشائعة - Pal Store</title>
+    <style>
+      /* تنسيقات خاصة بصفحة الأسئلة الشائعة للاندماج مع CSS الرئيسي */
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-title {
+        text-align: center;
+        color: #0077cc;
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .faq-item {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+
+      .faq-question {
+        padding: 18px 20px;
+        background-color: #ffffff;
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: #f0f7ff;
+        color: #0077cc;
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background-color: #f9f9f9;
+        color: #555;
+        line-height: 1.6;
+        font-size: 15px;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 15px 20px;
+        max-height: 200px;
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      .faq-icon {
+        transition: transform 0.3s;
+        font-weight: bold;
+        color: #0077cc;
+      }
+    </style>
+</head>
+
+<body>
+
+  <!-- الهيدر بنفس تصميم وشعار الصفحة الرئيسية -->
+  <header>
+    <nav class="header-content"> 
+      <img class="logo" src="../img/logo3.png" alt="Pal Store Logo">
+      <h1>Welcome to FAQ | الأسئلة الشائعة - Pal Store</h1>
+    </nav>
+    <nav class="main-nav">   
+      <a href="../final.html">الرئيسية</a>
+      <a href="../final.html#payment">طرق الدفع</a>
+      <a href="../final.html#subscribe">الاشتراك</a>
+      <a href="sell.html">بيع جوالك</a>
+      <a href="faq.html" style="background-color: #005fa3;">الأسئلة الشائعة</a>
+      
+      <!-- أيقونة السلة -->
+      <div class="cart-btn" onclick="toggleCartModal()">
+        🛒 السلة (<span id="cart-count">0</span>)
+      </div>
+    </nav>
+  </header>
+    
+  <!-- محتوى الأسئلة الشائعة -->
+  <main class="content">
+    <div class="faq-container">
+      <h2 class="faq-title"></h2>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>كيف يمكنني الشراء من متجر Pal Store؟</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          يمكنك تصفح المنتجات في الصفحة الرئيسية، واختيار الجوال المناسب ثم الضغط على زر "إضافة للسلة". بعد ذلك يمكنك مراجعة سلتك وإتمام عملية الشراء بنجاح.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>ما هي طرق الدفع المتاحة لدى المتجر؟</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          نوفر العديد من طرق الدفع الآمنة، تشمل البطاقات الائتمانية (Visa / MasterCard)، والدفع عند الاستلام، بالإضافة إلى المحافظ الإلكترونية.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>هل توجد كفالة على الجوالات المباعة؟</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          نعم، جميع الهواتف الذكية الجديدة تأتي مع كفالة مصنع رسمية لمدة سنة كاملة، وتغطي العيوب المصنعية.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>كيف يمكنني بيع جوالي القديم عبر الموقع؟</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          يمكنك الانتقال إلى صفحة "بيع جوالك" من القائمة العلوية، وتعبئة نموذج مواصفات جهازك وسنقوم بالتواصل معك لتقييم الهاتف وشرائه منك.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>ما هي مدة توصيل الطلبات؟</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          يستغرق التوصيل عادةً من 24 إلى 48 ساعة داخل معظم المناطق والمدن.
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- نافذة السلة (Modal) -->
+  <div id="cartModal" class="cart-modal" style="display:none; position:fixed; top:20%; right:10%; background:#fff; padding:20px; border:2px solid #333; z-index:1000; width:300px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <h3>سلة المشتريات</h3>
+    <ul id="cart-items" style="list-style:none; padding:0;"></ul>
+    <p><b>الإجمالي: </b><span id="cart-total">0</span>$</p>
+    <button onclick="clearCart()" style="background:red; color:#fff; border:none; padding:5px 10px; cursor:pointer;">تفريغ السلة</button>
+    <button onclick="toggleCartModal()" style="background:#555; color:#fff; border:none; padding:5px 10px; cursor:pointer;">إغلاق</button>
+  </div>
+
+  <!-- قسم الاشتراك -->
+  <div class="email" id="subscribe">
+      <h1>Subscribe for more latest updates</h1>
+      <div class="txt">
+         <form onsubmit="handleSubscribe(event)">
+            <input type="email" id="subEmail" class="emailm" placeholder="Enter your email for daily offers" required>
+            <input type="submit" class="btn" value="Subscribe Now">
+         </form>
+      </div>
+  </div>
+
+  <!-- الفوتر المطابق للصفحة الرئيسية -->
+  <footer class="footer" id="payment">
+    <div class="footer-cont">
+      <div class="footer-column">
+        <h3>Payment Options</h3>
+        <img src="../img/payment.jpg" alt="Payment Methods" class="payment-img">
+      </div>
+
+      <div class="footer-column">
+        <h3>ABOUT US</h3>
+        <ul>
+          <li><a href="../final.html">Pal Store</a></li>
+          <li><a href="tel:+970597784541">Contact</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="sell.html">Sell on Palstore</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>ASSISTANCE</h3>
+        <ul>
+          <li><a href="how_to.html" class="v">How To Buy</a></li>
+          <li><a href="faq.html" class="v">FAQ</a></li>
+          <li><a href="warranty.html" class="v">Warranty</a></li>
+          <li><a href="cancel.html" class="v">Cancelations & Returnings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>CONTACT</h3>
+        <p>Call Center<br><a class="highlight" href="tel:+970597784541">0597784541</a></p>
+        <p>Email<br><a class="highlight" href="mailto:info@palstore.eu">info@palstore.eu</a></p>
+        <div class="social-icons">
+          <a href="#"><img src="../img/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="../img/youtupe.png" alt="YouTube" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2024–2026 palstore.eu رامز أبو مصطفى 1301210135 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- السكريبت للوظائف التفاعلية والأسئلة -->
+  <script src="../js/final.js"></script>
+  <script>
+    // كود بسيط لفتح وإغلاق الإجابات عند الضغط
+    function toggleFaq(element) {
+      const item = element.parentElement;
+      item.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
